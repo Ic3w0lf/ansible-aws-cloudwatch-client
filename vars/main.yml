@@ -1,2 +1,2 @@
 ---
-# vars file for ansible-cloudwatchclient
+# vars file for ansible-aws-cloudwatch-client

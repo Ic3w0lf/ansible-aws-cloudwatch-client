@@ -1,7 +1,7 @@
 ---
-# defaults file for ansible-cloudwatchclient
+# defaults file for ansible-aws-cloudwatch-client
 
-cloudwatchclient_logfiles:
+aws_cloudwatch_client_logfiles:
   - {
     logpath: '/var/log/mail.log',
     datetime_format: '%b %d %H:%M:%S',

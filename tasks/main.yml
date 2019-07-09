@@ -1,5 +1,5 @@
 ---
-# tasks file for ansible-cloudwatchclient
+# tasks file for ansible-aws-cloudwatch-client
 
 - name: Download awslogs-agent-setup.py
   get_url:

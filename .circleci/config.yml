@@ -4,16 +4,16 @@ jobs:
   build:
     docker:
       - image: docker:stable
-    working_directory: ~/ansible-cloudwatchclient
+    working_directory: ~/ansible-aws-cloudwatch-client
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
       - checkout:
-          path: ~/ansible-cloudwatchclient
+          path: ~/ansible-aws-cloudwatch-client
       - run:
           name: "Install pip"
           command: "apk add --update python python-dev py-pip build-base
-                    openssl-dev libffi-dev linux-headers"
+            openssl-dev libffi-dev linux-headers"
       - run:
           name: "Install python dependencies"
           command: "pip install -r requirements.txt"
