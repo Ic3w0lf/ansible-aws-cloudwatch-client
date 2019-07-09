@@ -20,5 +20,8 @@ initial_position = {{ logfile.initial_position }}
 {%if logfile.logpath %}
 log_group_name = {{ logfile.logpath }}
 {% endif %}
+{%if logfile.log_stream_name %}
+log_stream_name = {{ logfile.log_stream_name }}
+{% endif %}
 
 {% endfor %}
