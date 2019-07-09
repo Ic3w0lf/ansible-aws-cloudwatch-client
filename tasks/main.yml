@@ -1,0 +1,26 @@
+---
+# tasks file for ansible-cloudwatchclient
+
+- name: Download awslogs-agent-setup.py
+  get_url:
+    url: https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
+    dest: /tmp/awslogs-agent-setup.py
+    mode: 0775
+
+- name: Create cron folder if not exists
+  file:
+    path: /etc/cron.d
+    state: directory
+
+- name: Create awslogs config file
+  template:
+    src: "templates/awslogs.conf.j2"
+    dest: "/tmp/awslogs.conf"
+    mode: 0644
+  notify: configure awslogs
+  register: config
+
+- name: Run the awslogs setup command
+  command: creates="/var/awslogs/bin" python /tmp/awslogs-agent-setup.py --region eu-central-1 -c /tmp/awslogs.conf --non-interactive
+  become: yes
+  run_once: true

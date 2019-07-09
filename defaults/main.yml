@@ -1,0 +1,16 @@
+---
+# defaults file for ansible-cloudwatchclient
+
+cloudwatchclient_logfiles:
+  - {
+    logpath: '/var/log/mail.log',
+    datetime_format: '%b %d %H:%M:%S',
+    buffer_duration: '5000',
+    initial_position: 'start_of_file'
+  }
+  - {
+    logpath: '/var/log/auth.log',
+    datetime_format: '%b %d %H:%M:%S',
+    buffer_duration: '5000',
+    initial_position: 'start_of_file'
+  }
