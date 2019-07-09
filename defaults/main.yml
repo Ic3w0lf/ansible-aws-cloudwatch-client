@@ -6,11 +6,13 @@ aws_cloudwatch_client_logfiles:
     logpath: '/var/log/mail.log',
     datetime_format: '%b %d %H:%M:%S',
     buffer_duration: '5000',
-    initial_position: 'start_of_file'
+    initial_position: 'start_of_file',
+    log_stream_name: '{hostname}'
   }
   - {
     logpath: '/var/log/auth.log',
     datetime_format: '%b %d %H:%M:%S',
     buffer_duration: '5000',
-    initial_position: 'start_of_file'
+    initial_position: 'start_of_file',
+    log_stream_name: '{hostname}'
   }

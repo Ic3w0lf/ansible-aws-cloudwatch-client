@@ -13,7 +13,6 @@ file = {{ logfile.logpath }}
 {%if logfile.buffer_duration %}
 buffer_duration = {{ logfile.buffer_duration }}
 {% endif %}
-log_stream_name = {hostname}
 {%if logfile.initial_position %}
 initial_position = {{ logfile.initial_position }}
 {% endif %}
